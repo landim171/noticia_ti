@@ -162,16 +162,3 @@ body.escurecer::before {
     font-size: 2rem;
     line-height: 100%;
 }
-
-.terceira-secao h2 {
-    columns: var(--silver);
-    font-size: 2rem;
-    font-weight: 1.5rem;
-    margin-block: 0.6rem;
-}
-
-.terceira-secao p {
-    font-size: 0.9375rem;
-    line-height: 1.625;
-    color: var(--gunmetal);
-}
