@@ -1,17 +1,17 @@
-*{
-    margin: 0;
+* {
+    margin: 0; 
     padding: 0;
     box-sizing: border-box;
-    font-family: "inter", sans-serif;
-}
+    font-family: "Inter", sans-serif;
+    }
 
 :root {
     --almost-white: #fffdfa;
-    --dark-blue: #00001a;
-    --gunmetal: #5e607a;
-    --vermillion: #f15d51;
-    --yellow: #e9aa52;
-    --silver: #c5c6ce;
+    --dark-blue: #00001A;
+    --gunmetal: #5E607A;
+    --vermillion: #F15D51;
+    --yellow: #E9AA52;
+    --sílver: #C5C6CE;
 }
 
 body {
@@ -27,23 +27,19 @@ body.escurecer::before {
     background-color: rgba(0, 0, 26, 0.5);
     top: 0;
     left: 0;
-
 }
 
-.header-mobile {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+
+    max-width: 1110px;
+    margin-inline: auto;
 }
 
-.header-mobile {
-    border: none;
-    background: none;
-    width: fit-content;
-}
-
-.header-mobile nav {
+header nav.mobíle {
     position: fixed;
     background-color: var(--almost-white);
     right: -16rem;
@@ -58,23 +54,38 @@ body.escurecer::before {
     gap: 1.5rem;
 
     transition: 0.7s;
-}
+ }
 
-.header-mobile nav.abrir {
+ header nav.mobíle.abrir {
     right: 0;
-}
+ }
 
-.header-mobile nav button {
-    margin-left: auto;
+header nav button {
+    align-self: flex-end;
     margin-bottom: 4rem;
+ }
+
+header button {
+    border: none;
+    background: none;
+    width: fit-content;
+    cursor: pointer;
 }
 
-.header-mobile nav a {
+header.mobíle a{
     text-decoration: none;
     color: var(--dark-blue);
     font-size: 1.125rem;
     line-height: 1.5rem;
+}
 
+header .desktop {
+    display: none;
+}
+
+main {
+    max-width: 1110px;
+    margin-inline: auto;
 }
 
 .primeira-secao {
@@ -101,7 +112,7 @@ body.escurecer::before {
 }
 
 .primeira-secao button {
-    padding: 0.75rem;
+    padding: 0.75rem 2rem;
     background-color: var(--vermillion);
     border: none;
     text-transform: uppercase;
@@ -119,9 +130,9 @@ body.escurecer::before {
 }
 
 .margin-border-padding {
-    border-bottom: 1px solid var(--gunmetal);
-    margin-bottom: 1.75rem;
-    padding-bottom: 1.75rem;
+     border-bottom: 1px solid var(--gunmetal);
+     margin-bottom: 1.75rem;
+     padding-bottom: 1.75rem;
 }
 
 
@@ -141,7 +152,7 @@ body.escurecer::before {
 }
 
 .segunda-secao p {
-    color: var(--almost-white);
+    color: var(--sílver);
     font-size: 0.9375rem;
     line-height: 1.625rem;
 }
@@ -157,21 +168,95 @@ body.escurecer::before {
     max-width: 6.25rem;
 }
 
+
 .terceira-secao strong {
-    color: var(--dark-blue);
+    color: var(--sílver);
     font-size: 2rem;
     line-height: 100%;
 }
 
 .terceira-secao h2 {
-    columns: var(--silver);
-    font-size: 2rem;
-    font-weight: 1.5rem;
+    color: var(--dark-blue);
+    font-size: 1.125rem;
+    font-weight: 800;
+    line-height: 1.5rem;
     margin-block: 0.6rem;
+}
+
+.terceira-secao a {
+    text-decoration: none;
 }
 
 .terceira-secao p {
     font-size: 0.9375rem;
-    line-height: 1.625;
+    line-height: 1.625rem;
     color: var(--gunmetal);
+}
+
+@media(min-width: 1110px) {
+
+
+    header > button {
+        display: none;
+    }
+
+    header .desktop {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    header .desktop a{
+        font-size: 0.9375rem;
+        line-height: 1.625rem;
+        text-decoration: none;
+        color: var(--gunmetal);
+    }
+
+    header .desktop a:hover {
+        color: var(--vermillion);
+    }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.75rem;
+    }
+
+    .primeira-secao {
+        grid-column: 1 / 3;
+       
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.75rem;
+    }
+
+    .primeira-secao picture {
+        grid-column: 1 / 3;
+    }
+
+    .primeira-secao img {
+        margin: 0;
+    }
+
+    .primeira-secao h1 {
+        font-size: 3.5rem;
+    }
+
+    .primeira-secao button:hover {
+        background-color: var(--dark-blue);
+        cursor: pointer;
+    }
+
+    .segunda-secao h2 {
+        font-size: 2.5rem;
+    }
+
+    .terceira-secao {
+        display: flex;
+        grid-column: 1 / 4;
+    }
+
+    .terceira-secao h2:hover {
+        color: var(--vermillion);
+    }
 }
